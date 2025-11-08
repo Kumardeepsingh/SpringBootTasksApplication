@@ -9,7 +9,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name ="task_lists")
-public class TaskLists {
+public class TaskList {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name ="id",nullable = false,updatable = false)
@@ -31,10 +31,10 @@ public class TaskLists {
     @Column(name = "updated",nullable = false)
     private LocalDateTime updated;
 
-    public TaskLists() {
+    public TaskList() {
     }
 
-    public TaskLists(UUID id, String title, String description, List<Task> tasks, LocalDateTime created, LocalDateTime updated) {
+    public TaskList(UUID id, String title, String description, List<Task> tasks, LocalDateTime created, LocalDateTime updated) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -94,8 +94,8 @@ public class TaskLists {
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        TaskLists taskLists = (TaskLists) o;
-        return Objects.equals(id, taskLists.id) && Objects.equals(title, taskLists.title) && Objects.equals(description, taskLists.description) && Objects.equals(tasks, taskLists.tasks) && Objects.equals(created, taskLists.created) && Objects.equals(updated, taskLists.updated);
+        TaskList taskList = (TaskList) o;
+        return Objects.equals(id, taskList.id) && Objects.equals(title, taskList.title) && Objects.equals(description, taskList.description) && Objects.equals(tasks, taskList.tasks) && Objects.equals(created, taskList.created) && Objects.equals(updated, taskList.updated);
     }
 
     @Override
