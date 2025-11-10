@@ -1,0 +1,10 @@
+package com.kumar.tasks.services;
+
+import com.kumar.tasks.domain.entities.Task;
+
+import java.util.List;
+import java.util.UUID;
+
+public interface TaskService {
+    List<Task> listTasks(UUID taskListId);
+}
