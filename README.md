@@ -2,7 +2,8 @@
 
 ![Java](https://img.shields.io/badge/Java-17-blue?logo=openjdk)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen?logo=springboot)
-![Build](https://img.shields.io/badge/Build-Maven-orange?logo=apachemaven)
+![React](https://img.shields.io/badge/Frontend-React%20%2B%20TypeScript-blue?logo=react)
+![Build](https://img.shields.io/badge/Build-Maven%20%26%20Vite-orange?logo=apachemaven)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
 ![Status](https://img.shields.io/badge/Status-Active-success)
 
@@ -10,10 +11,11 @@
 
 ## 📖 Overview
 
-The **Spring Boot Tasks Application** is a simple yet powerful RESTful API built with **Spring Boot** and **Java** for managing tasks.  
-It demonstrates clean architecture principles — separating controller, service, and repository layers — and provides full CRUD functionality for task management.
+The **Spring Boot Tasks Application** is a full-stack project consisting of:
+- 🖥 **Backend:** RESTful API built with **Spring Boot** and **Java**
+- 💻 **Frontend:** Modern **React + TypeScript** single-page application powered by **Vite**
 
-This project is ideal for learning **Spring Boot fundamentals**, **JPA persistence**, and **REST API design**.
+It enables users to **create, view, update, and delete tasks**, demonstrating clean architecture and full-stack integration.
 
 ---
 
@@ -22,144 +24,102 @@ This project is ideal for learning **Spring Boot fundamentals**, **JPA persisten
 <details>
 <summary>Click to expand</summary>
 
-- [🌱 Spring Boot Tasks Application](#-spring-boot-tasks-application)
-  - [📖 Overview](#-overview)
-  - [🧭 Table of Contents](#-table-of-contents)
-  - [✨ Features](#-features)
-  - [🧰 Technologies Used](#-technologies-used)
-  - [⚙️ Getting Started](#️-getting-started)
-    - [🔑 Prerequisites](#-prerequisites)
-    - [📦 Installation](#-installation)
-    - [🚀 Running the Application](#-running-the-application)
-  - [📡 API Endpoints](#-api-endpoints)
-  - [🧩 Project Structure](#-project-structure)
-  - [💾 Database Configuration](#-database-configuration)
-  - [🧪 Testing](#-testing)
-  - [🐳 Docker Support](#-docker-support)
-  - [🤝 Contributing](#-contributing)
-  - [📄 License](#-license)
-  - [👨‍💻 Author](#-author)
+- [📖 Overview](#-overview)
+- [✨ Features](#-features)
+- [🧰 Technologies Used](#-technologies-used)
+- [⚙️ Getting Started](#️-getting-started)
+  - [🔑 Prerequisites](#-prerequisites)
+  - [📦 Installation](#-installation)
+  - [🚀 Running the Application](#-running-the-application)
+- [🧩 Project Structure](#-project-structure)
+- [📡 API Endpoints](#-api-endpoints)
+- [💾 Database Configuration](#-database-configuration)
+- [🧪 Testing](#-testing)
+- [🐳 Docker Support](#-docker-support)
+- [💻 Frontend Application](#-frontend-application)
+  - [🧱 Frontend Technologies](#-frontend-technologies)
+  - [🏗️ Running the Frontend](#️-running-the-frontend)
+  - [⚙️ Frontend Configuration](#️-frontend-configuration)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
+- [👨‍💻 Author](#-author)
 </details>
 
 ---
 
 ## ✨ Features
 
-- ✅ Create, Read, Update, and Delete (CRUD) operations on tasks  
-- ✅ RESTful API built using Spring Boot  
-- ✅ Uses Spring Data JPA for easy persistence  
-- ✅ H2 in-memory or external database support  
-- ✅ Clean layered architecture (Controller → Service → Repository → Model)  
+- ✅ Full CRUD functionality for task management  
+- ✅ RESTful API with clean layered architecture  
+- ✅ H2 (in-memory) or MySQL/PostgreSQL database support  
+- ✅ React frontend with Tailwind UI & smooth animations  
+- ✅ Real-time API communication via Axios  
 - ✅ Docker and Docker Compose ready  
-- ✅ Maven wrapper for simple builds and runs  
+- ✅ Maven and Vite-based build processes  
 
 ---
 
 ## 🧰 Technologies Used
 
-| Component | Description / Version |
-|-----------:|----------------------|
-| **Language** | Java (17+) |
-| **Framework** | Spring Boot 3.x |
-| **ORM** | Spring Data JPA |
-| **Database** | H2 (default) / MySQL / PostgreSQL |
-| **Build Tool** | Maven |
-| **Container** | Docker & Docker Compose (optional) |
-| **IDE** | IntelliJ IDEA / Eclipse / VS Code |
+| Layer | Technologies |
+|:------|:--------------|
+| **Backend** | Java 17+, Spring Boot 3.x, Spring Data JPA, Hibernate, H2/MySQL |
+| **Frontend** | React 18+, TypeScript, Vite, Tailwind CSS, NextUI, Framer Motion, Axios, React Router |
+| **Build Tools** | Maven, npm, Vite |
+| **Containerization** | Docker, Docker Compose |
 
 ---
 
 ## ⚙️ Getting Started
 
-Follow these steps to set up the project locally.
-
----
-
 ### 🔑 Prerequisites
 
-Before running, ensure you have the following installed:
-
-- Java 17 or higher  
-- Maven (or use included `mvnw` wrapper)  
-- Git  
-- (Optional) Docker & Docker Compose  
+- Java 17+  
+- Maven (or use included `mvnw`)  
+- Node.js 18+ & npm  
+- Docker
 
 ---
 
 ### 📦 Installation
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Kumardeepsingh/SpringBootTasksApplication.git
-   cd SpringBootTasksApplication
+```bash
+git clone https://github.com/Kumardeepsingh/SpringBootTasksApplication.git
+cd SpringBootTasksApplication
+```
 
-## 🏗️ Build the Project
-
-You can build the project using **Maven Wrapper** or **Maven**:
-
+#### Build Backend
 ```bash
 ./mvnw clean install
 ```
-or
+
+#### Install Frontend Dependencies
 ```bash
-mvn clean install
+cd front_end
+npm install
 ```
 
 ---
 
 ## 🚀 Running the Application
 
-### Run directly with Maven
+### 🧠 Start Backend (Spring Boot)
+
 ```bash
 ./mvnw spring-boot:run
 ```
 
-### Or run the generated JAR file
+Runs at: 👉 **[http://localhost:8080](http://localhost:8080)**
+
+### 💻 Start Frontend (React + Vite)
+
 ```bash
-java -jar target/springboot-tasks-application.jar
+cd front_end
+npm run dev
 ```
 
-After startup, the API will be available at:  
-👉 **[http://localhost:8080](http://localhost:8080)**
-
----
-
-## 📡 API Endpoints
-
-| Method | Endpoint       | Description                 |
-|:-------|:----------------|:----------------------------|
-| `GET`  | `/tasks`        | Fetch all tasks             |
-| `GET`  | `/tasks/{id}`   | Fetch a specific task by ID |
-| `POST` | `/tasks`        | Create a new task           |
-| `PUT`  | `/tasks/{id}`   | Update an existing task     |
-| `DELETE` | `/tasks/{id}` | Delete a task by ID         |
-
----
-
-## 🧾 Example JSON Requests and Responses
-
-### Request (POST / PUT)
-```json
-{
-  "title": "Finish report",
-  "description": "Complete the monthly financial report",
-  "dueDate": "2025-11-15",
-  "completed": false
-}
-```
-
-### Response
-```json
-{
-  "id": 1,
-  "title": "Finish report",
-  "description": "Complete the monthly financial report",
-  "dueDate": "2025-11-15",
-  "completed": false,
-  "createdAt": "2025-11-09T12:34:56",
-  "updatedAt": "2025-11-09T12:34:56"
-}
-```
+Runs at: 👉 **[http://localhost:5173](http://localhost:5173)**  
+The frontend automatically connects to the backend API (port `8080`) via Axios.
 
 ---
 
@@ -168,20 +128,27 @@ After startup, the API will be available at:
 ```plaintext
 SpringBootTasksApplication/
 │
+├── front_end/                     # React + TypeScript frontend
+│   ├── src/
+│   │   ├── components/            # Reusable UI components
+│   │   ├── pages/                 # Page-level views (Tasks, Home, etc.)
+│   │   ├── services/              # Axios API service
+│   │   ├── hooks/                 # Custom React hooks
+│   │   └── main.tsx               # App entry point
+│   ├── public/                    # Static assets
+│   ├── package.json               # Frontend dependencies & scripts
+│   └── vite.config.ts             # Vite build configuration
+│
 ├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/example/tasks/
-│   │   │       ├── controller/      # REST controllers
-│   │   │       ├── service/         # Business logic
-│   │   │       ├── repository/      # JPA repositories
-│   │   │       └── domain/          # Dto & Entity classes
-│   │   │       └── mappers/         # Dto Mappers
-│   │   └── resources/
-│   │       ├── application.properties
-│   │       └── static/ or templates/
-│   └── test/
-│       └── java/                    # Unit and integration tests
+│   ├── main/java/com/example/tasks/
+│   │   ├── controller/            # REST Controllers
+│   │   ├── service/               # Business logic
+│   │   ├── repository/            # JPA Repositories
+│   │   ├── domain/                # Entity & DTO classes
+│   │   └── mappers/               # DTO to Entity mappers
+│   └── resources/
+│       ├── application.properties
+│       └── static/
 │
 ├── pom.xml
 ├── docker-compose.yml
@@ -191,11 +158,32 @@ SpringBootTasksApplication/
 
 ---
 
+## 📡 API Endpoints
+
+| Method | Endpoint | Description |
+|:-------|:----------|:-------------|
+| `GET` | `/task-list{task_list_id}/tasks` | Get all tasks |
+| `GET` | `/task-list{task_list_id}/tasks/{id}` | Get a specific task |
+| `POST` | `/task-list{task_list_id}/tasks` | Create a new task |
+| `PUT` | `/task-list{task_list_id}/tasks/{id}` | Update an existing task |
+| `DELETE` | `/task-list{task_list_id}/tasks/{id}` | Delete a task |
+
+Example `POST /tasks` request:
+
+```json
+{
+  "title": "Complete Project",
+  "description": "Finish the full-stack Spring Boot app",
+  "dueDate": "2025-11-15",
+  "completed": false
+}
+```
+
+---
+
 ## 💾 Database Configuration
 
-By default, the app uses an **in-memory H2 database** (ideal for testing).
-
-**File:** `src/main/resources/application.properties`
+Default **H2** setup (in-memory):
 ```properties
 spring.datasource.url=jdbc:h2:mem:tasksdb
 spring.datasource.driverClassName=org.h2.Driver
@@ -205,15 +193,9 @@ spring.jpa.hibernate.ddl-auto=update
 spring.h2.console.enabled=true
 ```
 
-Access the H2 console at:  
-👉 **[http://localhost:8080/h2-console](http://localhost:8080/h2-console)**
+Access console: 👉 [http://localhost:8080/h2-console](http://localhost:8080/h2-console)
 
----
-
-## 🛠️ Switching to MySQL or PostgreSQL
-
-To use a persistent database, update the configuration:
-
+Switch to **MySQL**:
 ```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/tasksdb
 spring.datasource.username=root
@@ -224,45 +206,70 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
 
 ---
 
-## 🧪 Testing
-
-Run all tests using Maven:
-```bash
-./mvnw test
-```
-
-Tests should be placed under:
-```plaintext
-src/test/java/com/example/tasks/
-```
-
-You can use **JUnit 5** and **Mockito** for unit and integration tests.
-
----
 
 ## 🐳 Docker Support
 
-### 🧱 Build Docker Image
 ```bash
-docker build -t springboot-tasks-app .
+docker-compose up 
 ```
 
-### ▶️ Run via Docker Compose
+---
+
+## 💻 Frontend Application
+
+### 🧱 Frontend Technologies
+
+| Library | Purpose |
+|:---------|:---------|
+| **React 18** | UI framework |
+| **TypeScript** | Static typing |
+| **Vite** | Fast build & dev server |
+| **Tailwind CSS** | Utility-first styling |
+| **NextUI** | Modern UI components |
+| **Framer Motion** | Animations |
+| **Lucide React** | Icon library |
+| **Axios** | REST API communication |
+| **React Router** | Client-side routing |
+
+---
+
+### 🏗️ Running the Frontend
+
+Development:
 ```bash
-docker-compose up
+cd front_end
+npm run dev
 ```
 
-This will automatically build and start the application along with any linked database container.
+Build for production:
+```bash
+npm run build
+```
+
+Preview production build:
+```bash
+npm run preview
+```
+
+---
+
+### ⚙️ Frontend Configuration
+
+By default, API requests use `http://localhost:8080` as the backend URL.  
+If deploying separately, update the Axios base URL in the frontend service file (e.g., `src/services/api.ts`).
+
+You can also create a `.env` file in `front_end/`:
+```env
+VITE_API_BASE_URL=http://localhost:8080
+```
 
 ---
 
 
 ## 📄 License
 
-This project is licensed under the **MIT License**.  
-You are free to use, modify, and distribute it as permitted under the license.
-
-See the [LICENSE](LICENSE) file for more information.
+Licensed under the **MIT License**.  
+See the [LICENSE](LICENSE) file for full details.
 
 ---
 
